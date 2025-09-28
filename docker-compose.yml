@@ -1,0 +1,44 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www/html
+    command: >
+      sh -c "php artisan schedule:work"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - CACHE_STORE=redis
+      - REDIS_CLIENT=predis
+      - REDIS_HOST=redis
+  scheduler:
+    image: search-engine-provider-app   
+    build:
+      context: .
+      dockerfile: Dockerfile         
+    volumes:
+      - ./:/var/www/html               
+    working_dir: /var/www/html
+    command: php artisan schedule:work 
+    depends_on:
+      - app
+    restart: unless-stopped
+
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: laravel_db
+      MYSQL_USER: laravel_user
+      MYSQL_PASSWORD: secret
+    ports:
+      - "3307:3306"
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
