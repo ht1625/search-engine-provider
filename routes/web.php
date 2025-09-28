@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MediaItemPageController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [MediaItemPageController::class, 'index'])
+    ->name('media.items.page');

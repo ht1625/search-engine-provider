@@ -19,10 +19,12 @@ return new class extends Migration
             $table->string('type');
             $table->json('stats')->nullable();
             $table->json('tags')->nullable();
-            $table->float('score')->nullable();
+            $table->float('score', 8, 3)->nullable();
             $table->string('provider_name');
             $table->dateTime('published_at')->nullable();
-            $table->timestamps();;
+            $table->timestamps();
+
+            $table->fullText('title');
         });
     }
 
