@@ -21,7 +21,7 @@ class Kernel extends ConsoleKernel
     {
         // This is the place to define your command schedule. 
         // But no work is done here, just the schedule is defined.
-        // $schedule->command('app:fetch-provider-data')->cron('*/3 * * * *');
+        $schedule->command('app:fetch-provider-data')->cron('*/3 * * * *');
     }
 
     /**
