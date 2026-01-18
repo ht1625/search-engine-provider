@@ -7,7 +7,7 @@ hale getiren bir uygulamadır.
 Amaç; **arama**, **filtreleme**, **sıralama**, **puanlama** ve **güncellik takibi** gibi işlevleri tek bir noktadan yönetmektir.  
 
 ![Laravel](https://img.shields.io/badge/Laravel-12-red?style=for-the-badge&logo=laravel)
-![PHP](https://img.shields.io/badge/PHP-8.2-blue?style=for-the-badge&logo=php)
+![PHP](https://img.shields.io/badge/PHP-8.4-blue?style=for-the-badge&logo=php)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-orange?style=for-the-badge&logo=mysql)
 ![Docker](https://img.shields.io/badge/Docker-Engine-blue?style=for-the-badge&logo=docker)
 
